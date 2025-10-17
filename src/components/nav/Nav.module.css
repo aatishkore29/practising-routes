@@ -60,7 +60,7 @@ nav {
     transform: scale(0.9);
     box-shadow: 1px 1px 0px 1px rgba(0, 0, 0, 1);
     background-color: var(--clr-touch);
-    color: var(--primary-color);
+    /* color: var(--primary-color); */
 }
 
 

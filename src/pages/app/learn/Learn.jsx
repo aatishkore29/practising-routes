@@ -13,7 +13,7 @@ function Learn() {
     <div className={style.courses_container}>
       <div className={style.top_head}>
         {/* Task4: Create Link to go back to the Courses page */}
-        <Link to={`/courses/${course.id}`}>
+        <Link to="/courses">
           <h2 className={style.back}>{"<<"}</h2>
         </Link>
 
@@ -24,7 +24,16 @@ function Learn() {
         <div className={style.chapters}>
           <h1>Chapters</h1>
           <hr />
-          <ul>{/*Task4: List of Chapters must be rendered here  */}</ul>
+          <ul>
+            {/*Task4: List of Chapters must be rendered here  */}
+            {course.chapters.map((chapter, i) => {
+              return (
+                <div key={i} className={style.chapter}>
+                  {chapter.title}
+                </div>
+              );
+            })}
+          </ul>
         </div>
 
         <div className={style.courses}>
