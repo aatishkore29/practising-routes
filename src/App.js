@@ -4,12 +4,15 @@ import Courses from "./pages/app/courses/Courses";
 import Details from "./pages/app/details/Details";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Learn from "./pages/app/learn/Learn";
+import Chapter from "./pages/app/chapter/Chapter";
+import Page404 from "./pages/misc/Page404/Page404";
 
 function App() {
   const browserRouter = createBrowserRouter([
     {
       path: "/",
       element: <Nav />,
+      errorElement: <Page404 />,
       children: [
         { index: true, element: <Hero /> },
         {
@@ -19,7 +22,11 @@ function App() {
             { path: ":courseId", element: <Details /> },
           ],
         },
-        { path: "/learn/:courseId", element: <Learn /> },
+        {
+          path: "/learn/:courseId",
+          element: <Learn />,
+          children: [{ path: "chapters/:chapterId", element: <Chapter /> }],
+        },
       ],
     },
   ]);

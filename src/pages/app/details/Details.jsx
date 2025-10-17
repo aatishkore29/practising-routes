@@ -7,7 +7,7 @@ import { useParams, Link } from "react-router-dom";
 function Details() {
   const { courseId } = useParams();
   const course = coursesData.find((course) => course.id === courseId);
-  console.log(course);
+  // console.log(course);
 
   return (
     //Third Task: get course id and match it with the data

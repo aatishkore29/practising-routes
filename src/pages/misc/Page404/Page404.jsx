@@ -1,6 +1,6 @@
-import React from 'react';
+import React from "react";
 
-import { useLocation, useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from "react-router-dom";
 function Page404() {
   const location = useLocation();
   const navigate = useNavigate();
@@ -14,7 +14,7 @@ function Page404() {
       </p>
       <button
         onClick={() => {
-          navigate('/');
+          navigate("/");
         }}
       >
         Go to Home
